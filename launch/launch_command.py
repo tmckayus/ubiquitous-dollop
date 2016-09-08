@@ -4,6 +4,7 @@ import logging
 import signal
 import subprocess
 import sys
+import os
 
 def make_handler(a):
     def handle_signal(signum, stack):
@@ -39,7 +40,8 @@ def main(*args):
     log.addHandler(hdlr)
     log.setLevel(logging.DEBUG)
     log.info("Running %s" % ' '.join(args))
-    
+    log.info("master is ", os.environ['OSHINKO_CLUSTER_MASTER'])
+    log.info("env is ", os.environ)
     try:
         # "Unignore" SIGINT before the subprocess is launched
         # in case this process is running in the background
