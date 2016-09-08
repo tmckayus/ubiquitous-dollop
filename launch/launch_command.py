@@ -41,7 +41,7 @@ def main(*args):
     log.setLevel(logging.DEBUG)
     log.info("Running %s" % ' '.join(args))
     log.info("master is %s" % os.environ['OSHINKO_CLUSTER_MASTER'])
-    log.info"env is %s" % os.environ)
+    log.info("env is %s" % os.environ)
     try:
         # "Unignore" SIGINT before the subprocess is launched
         # in case this process is running in the background
